@@ -174,9 +174,9 @@ git submodule update --init --recursive
 
 # Find the Python version used by GDB.
 PYVER=$(gdb -batch -q --nx -ex 'pi import platform; print(".".join(platform.python_version_tuple()[:2]))')
-PYTHON+=$(gdb -batch -q --nx -ex 'pi import sys; print("/usr/bin/python3.11")')
+PYTHON+=$(gdb -batch -q --nx -ex 'pi import sys; print("/usr/bin/python")')
 if ! osx; then
-    PYTHON+="${PYVER}"
+    PYTHON+="3.11"
 fi
 
 # Find the Python site-packages that we need to use so that
